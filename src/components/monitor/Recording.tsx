@@ -99,7 +99,7 @@ function Recording() {
 			<div className="listen-button">
 				{isTempoExist ? (
 					<i
-						className="fa-solid fa-pause"
+						className="fa-solid fa-stop"
 						onClick={() => setIsTempoExist(false)}
 					/>
 				) : (

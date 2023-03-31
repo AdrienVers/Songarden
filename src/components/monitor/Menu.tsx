@@ -18,12 +18,15 @@ function Menu() {
 				<div
 					className="play-button"
 					onClick={() => setVisibleMenu("recording")}
+					title="Ecouter sa composition musicale."
 				>
 					<i className="fa-solid fa-play" />
 					<span>Ecouter</span>
 				</div>
-
-				<div className="record-button">
+				<div
+					className="record-button"
+					title="Enregistrer sa composition musicale sera possible dans la prochaine version."
+				>
 					<i className="fa-solid fa-record-vinyl" />
 					<span>Enregistrer</span>
 				</div>
@@ -36,12 +39,18 @@ function Menu() {
 					justifyContent: "space-evenly",
 				}}
 			>
-				<div className="download-button">
+				<div
+					className="download-button"
+					title="Télécharger sa composition musicale sera possible dans la prochaine version."
+				>
 					<i className="fa-solid fa-download" />
 					<span>Télécharger</span>
 				</div>
 
-				<div className="demo-button">
+				<div
+					className="demo-button"
+					title="Lancer une démo sera possible dans la prochaine version."
+				>
 					<i className="fa-solid fa-drum" />
 					<span>Lancer la démo</span>
 				</div>

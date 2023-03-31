@@ -69,7 +69,7 @@ function Settings() {
 			piano: "DO",
 			cymbale: "CRASH",
 			timbale: "BONGO",
-			guitare: "GUITARE",
+			guitare: "NORMALE",
 			bois: "HARMONICA",
 			vent: "FLUTE",
 			divers: "MARACAS1",
@@ -78,6 +78,13 @@ function Settings() {
 		});
 		setTempoValue("");
 		setSelectedIndex(null);
+	};
+
+	const isValidTempoValue = (value: string) => {
+		const validValues = [
+			0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7,
+		];
+		return validValues.includes(parseFloat(value));
 	};
 
 	const handleDelete = () => {
@@ -119,7 +126,10 @@ function Settings() {
 							<form onSubmit={(e) => handleSubmit(e)}>
 								<div className="instrument-inputs">
 									<div className="instrument-note">
-										<i className="fa-solid fa-sliders" />
+										<i
+											className="fa-solid fa-sliders"
+											title="Options possibles."
+										/>
 										{instrument.notes.map((note) => (
 											<button
 												className="note-button"
@@ -138,7 +148,11 @@ function Settings() {
 										))}
 									</div>
 									<div className="instrument-tempo">
-										<i id="tempo" className="fa-solid fa-wave-square" />
+										<i
+											id="tempo"
+											className="fa-solid fa-wave-square"
+											title="Instant où la note sera jouée (seuls 0.5, 1, 1.5 ... 7 sont acceptées)."
+										/>
 										<input
 											type="number"
 											min={0.5}
@@ -159,9 +173,11 @@ function Settings() {
 									</div>
 								</div>
 								<button
+									title="Pour valider : Il faut avoir sélectionné une option et un tempo valide."
 									className="submit-button"
 									type="submit"
 									onClick={() => setVisibleMenu("recording")}
+									disabled={!isValidTempoValue(tempoValue)}
 								>
 									Ajouter
 								</button>
@@ -337,6 +353,12 @@ const SettingsGlobal = styled.div`
 
 				&:hover {
 					cursor: pointer;
+				}
+
+				&:disabled {
+					cursor: not-allowed;
+					background-color: rgba(200, 200, 200, 0.5);
+					color: rgba(0, 0, 0, 0.5);
 				}
 			}
 		}

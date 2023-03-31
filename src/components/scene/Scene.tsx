@@ -18,7 +18,9 @@ function Scene() {
 	const { setVisibleMenu, setActiveInstrument, setSelectedNotes } = useStore();
 
 	const handlePlayClick = (instrument: string) => {
-		const audio = new Audio(`/assets/${instrument}.mp3`);
+		const audio = new Audio(
+			`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${instrument}.mp3`,
+		);
 		audio.play();
 	};
 

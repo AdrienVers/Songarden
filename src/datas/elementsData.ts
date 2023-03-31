@@ -21,12 +21,12 @@ import Trompette from "../assets/Trompette.png";
 import MiniGuitare from "../assets/MiniGuitare.png";
 
 interface Element {
-    id : string;
-    category : string;
-    note : string;
-    src : StaticImageData;
-    alt : string;
-};
+	id: string;
+	category: string;
+	note: string;
+	src: StaticImageData;
+	alt: string;
+}
 
 export const wallInstruments: Element[] = [
 	{

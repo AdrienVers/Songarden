@@ -18,11 +18,18 @@ function Scene() {
 	const { setVisibleMenu, setActiveInstrument, setSelectedNotes } = useStore();
 
 	const handlePlayClick = (instrument: string) => {
+		const audio = new Audio(`/assets/${instrument}.mp3`);
+		audio.play();
+	};
+
+	/*
+		const handlePlayClick = (instrument: string) => {
 		const audio = new Audio(
 			`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${instrument}.mp3`,
 		);
 		audio.play();
 	};
+	*/
 
 	const handleInstrumentSelection = (instrument: string) => {
 		setVisibleMenu("settings");
@@ -618,7 +625,7 @@ const SceneGlobal = styled.div`
 				left: 0;
 				width: 100%;
 				height: 100%;
-				z-index: 3;
+				z-index: 1;
 			}
 
 			#chouette {
@@ -708,7 +715,7 @@ const SceneGlobal = styled.div`
 				left: 0;
 				width: 100%;
 				height: 100%;
-				z-index: 1;
+				z-index: 2;
 
 				&:hover {
 					cursor: pointer;
@@ -722,7 +729,7 @@ const SceneGlobal = styled.div`
 				left: 10px;
 				width: 30%;
 				height: auto;
-				z-index: 2;
+				z-index: 3;
 
 				&:hover {
 					cursor: pointer;

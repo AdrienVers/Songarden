@@ -42,11 +42,18 @@ function Recording() {
 	};
 
 	const playSound = (note: string) => {
+		const audio = new Audio(`/assets/${note}.mp3`);
+		audio.play();
+	};
+
+	/*
+	const playSound = (note: string) => {
 		const audio = new Audio(
 			`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${note}.mp3`,
 		);
 		audio.play();
 	};
+	*/
 
 	const handleInstrumentSelection = (instrument: string) => {
 		setVisibleMenu("settings");

@@ -24,16 +24,6 @@ function Settings() {
 		audio.play();
 	};
 
-	/*
-		const handleNoteSelection = (note: string) => {
-		setSelectedNotes({ ...selectedNotes, [activeInstrument]: note });
-		const audio = new Audio(
-			`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${note}.mp3`,
-		);
-		audio.play();
-	};
-	*/
-
 	const handleTempoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTempoValue(e.target.value);
 	};

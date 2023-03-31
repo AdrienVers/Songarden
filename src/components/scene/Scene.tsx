@@ -22,15 +22,6 @@ function Scene() {
 		audio.play();
 	};
 
-	/*
-		const handlePlayClick = (instrument: string) => {
-		const audio = new Audio(
-			`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${instrument}.mp3`,
-		);
-		audio.play();
-	};
-	*/
-
 	const handleInstrumentSelection = (instrument: string) => {
 		setVisibleMenu("settings");
 		setActiveInstrument(instrument);

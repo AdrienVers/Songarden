@@ -11,7 +11,7 @@ export default function Home() {
 				<meta
 					name="description"
 					content="Compose ta propre mélodie avec Songarden !"
-				/> 
+				/>
 				<link rel="icon" href="/logo.png" />
 			</Head>
 			<Scene />
